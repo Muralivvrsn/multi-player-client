@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from "react";
+import "./App.css";
+import io from "socket.io-client";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const [room, setRoom] = useState();
+  // useEffect(()=>{
+  //   const socket = io.connect("http://localhost:4000");
+  //   socket.emit("message",{
+  //     name:"Murali"
+  //   })
+  //   socket.emit('create-room');
+  //   socket.on('create-room',(id)=>{
+  //     console.log(`create room with id :${id}`);
+  //     setRoom(room);
+  //   })
+  //   socket.emit('join-room',room);
+  //   socket.on('joined-room',(data)=>{
+  //     console.log(`message to the room ${room}`);
+  //   })
+  // })
+  return <div className="App"></div>;
 }
 
 export default App;
