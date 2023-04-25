@@ -1,38 +1,276 @@
 .App {
+  width: 100%;
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  height: 90vh;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.create-room {
+  width: fit-content;
+  height: fit-content;
+}
+
+.create-room button {
+  width: fit-content;
+  height: fit-content;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 2rem;
+  background-color: #24a0ed;
+  cursor: pointer;
+}
+
+.join-room {
+  height: fit-content;
+  width: auto;
+}
+
+.join-room input {
+  width: 100%;
+  height: 40px;
+  font-size: 1rem;
+}
+
+.join-room button {
+  margin-top: 20px;
+  font-size: 1.5rem;
+}
+
+button:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  transition: all 0.2s ease-out;
+}
+
+.pop-up {
+  width: fit-content;
+  height: 200px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 2px solid black;
+  padding: 50px;
+  animation: popUp 2s forwards;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pop-up input {
+  width: 350px;
+  height: 30px;
+  font-size: 1.2rem;
+  border: none;
+  outline: 1px solid rgba(0, 0, 0, 0.4);
+}
+.pop-up button {
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  font-size: 1.1rem;
+  padding: 5px;
+  padding: 5px 10px;
+  letter-spacing: 2.5px;
+  margin-left: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+@keyframes popUp {
+  0% {
+    top: -100vh;
+  }
+  100% {
+    top: 50%;
+  }
 }
 
-@keyframes App-logo-spin {
+.players {
+  align-items: center;
+  justify-content: center;
+}
+
+.player {
+  width: 300px;
+  height: 40px;
+  border: 2px solid black;
+  background-color: burlywood;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 2px;
+}
+
+.player-0 {
+  background-color: blanchedalmond;
+}
+.player-1 {
+  background-color: coral;
+}
+.player-2 {
+  background-color: darkgoldenrod;
+}
+.player-3{
+  background-color: white;
+}
+.start {
+  border: 2px solid black;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+li {
+  list-style-type: none;
+}
+
+.joined,
+.red {
+  border-radius: 5px;
+  background-color: #fffdfa;
+  min-width: 300px;
+  padding: 15px;
+  position: absolute;
+  top: 50px;
+  font-size: 1.2rem;
+  box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.4);
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+.joined {
+  left: 50px;
+}
+.joined::after,
+.red::after {
+  content: "";
+  background-color: rgb(11, 255, 11);
+  position: absolute;
+  width: 0%;
+  animation: bot 5s infinite;
+  height: 10%;
+  right: 0;
+  top: 90%;
+}
+.red::after {
+  background-color: rgba(250, 0, 0, 0.3);
+}
+.red {
+  right: 30px;
+}
+@keyframes bot {
   from {
-    transform: rotate(0deg);
+    right: 0;
   }
   to {
-    transform: rotate(360deg);
+    width: 100%;
   }
+}
+
+.or {
+  font-size: 1.5rem;
+}
+.or::after {
+  content: "";
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  position: absolute;
+  width: 15%;
+  margin-top: 15px;
+  margin-left: 1%;
+}
+.or::before {
+  content: "";
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  position: absolute;
+  width: 15%;
+  margin-top: 15px;
+  margin-left: -16%;
+}
+
+.d-none {
+  display: none;
+}
+.d-block {
+  display: block;
+}
+
+
+
+
+.message-room{
+  width: 60%;
+  height: 90vh;
+}
+.messages{
+  width: 100%;
+  height: 95%;
+  border: 2px solid black;
+}
+
+.message input{
+  width: 95%;
+  height: 30px;
+  border: none;
+  outline: none;
+
+}
+.message input::placeholder{
+  margin-left: 100px;
+}
+.message button{
+  letter-spacing: 2px;
+  margin-left: 10px;
+  height: 34px;
+}
+.message{
+  padding: 5px;
+  border: 0.4px solid rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 10px 10px -10px rgba(0, 0, 0, 0.5);
+
+}
+.text-block{
+  max-width: 100%;
+  height: 100%;
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid black;
+  overflow-y: scroll;
+}
+.text{
+  min-width: 10px;
+  max-width: 500px;
+  min-height: 30px;
+  padding: 0px 5px;
+  border-radius: 5px;
+  font-family: 'Share Tech Mono', monospace;
+}
+
+.text-message{
+  max-width: 500px;
+  word-wrap: break-word;
+  height: fit-content;
+  background-color: #fffdfa;
+  box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.4);
+  margin:auto;
+  padding: 5px 15px;
+  margin: 5px 10px;
+  border-radius: 3px;
+  text-align: left;
+}
+.text-left{
+  margin-left: auto;
+}
+.text-right{
+  margin-right: auto;
+}
+.text-time{
+  font-size: 1px;
+  text-align: right;
+
 }
