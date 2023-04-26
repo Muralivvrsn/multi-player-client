@@ -1,9 +1,0 @@
-[build]
-command = "npm run build"
-publish = "build"
-
-[[redirects]]
-from = "/socket.io/*"
-to = "https://server-multi-player.onrender.com"
-status = 200
-force = true
