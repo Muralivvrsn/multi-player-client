@@ -12,6 +12,7 @@ function App() {
   const location = useLocation();
   return (
     <div className="App">
+     <img src={image} alt="" />
         <AnimatePresence mode="wait">
         <Routes location={location} key={location.key}>
           <Route
