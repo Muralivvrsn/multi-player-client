@@ -7,7 +7,7 @@ import Room from "./components/Room";
 import Message from "./components/Message";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
-const socket = io.connect("http://localhost:4000");
+const socket = io.connect("https://server-multi-player.onrender.com");
 function App() {
   const location = useLocation();
   return (
